@@ -33,12 +33,8 @@ int main()
 		}
 
 		XorNum[i] = Check;
-	}
 
-
-	for (int k = 0; k < Input; k++)
-	{
-		Sum ^= XorNum[k];
+		Sum ^= XorNum[i];
 	}
 	
 	cout << Sum << endl;
