@@ -3,6 +3,8 @@
 
 using namespace std;
 
+int Map[10][10] = { {0, } };
+
 class Wall
 {
 public:
