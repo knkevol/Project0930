@@ -3,47 +3,9 @@
 
 using namespace std;
 
-int main()
-{
-	int Input = 0;
-	int Sum = 0;
 
-	cin >> Input;
-	
-	vector<int> XorNum(Input);
-	
-	for (int i = 0; i < Input; i++)
-	{
-		int Num = 0;
-		if (!(cin >> Num))
-		{
-			return 1;
-		}			
-	
-		int Check = 1;
-		while (Check <= Num)
-		{
-			if (Check > INT_MAX / 2) // ValueType Change
-			{
-				Check = Num + 1;
-				break;
-			}
-			Check = Check * 2; // Check << 1  faster than before
-		}
-	
-		XorNum[i] = Check;
-	
-		Sum ^= XorNum[i];
-	}
-	
-	cout << Sum << endl;
 
-	BitOperater();
-	
-	return 0;
-}
-
-int BitOperater()
+int BitOperator()
 {
 	int N = 0;
 	unsigned long long X = 0;
@@ -74,4 +36,47 @@ int BitOperater()
 	}
 
 	cout << Result << endl;
+
+	return 0;
 }
+
+int main()
+{
+	//int Input = 0;
+	//int Sum = 0;
+
+	//cin >> Input;
+	//
+	//vector<int> XorNum(Input);
+	//
+	//for (int i = 0; i < Input; i++)
+	//{
+	//	int Num = 0;
+	//	if (!(cin >> Num))
+	//	{
+	//		return 1;
+	//	}			
+	//
+	//	int Check = 1;
+	//	while (Check <= Num)
+	//	{
+	//		if (Check > INT_MAX / 2) // ValueType Change
+	//		{
+	//			Check = Num + 1;
+	//			break;
+	//		}
+	//		Check = Check * 2; // Check << 1  faster than before
+	//	}
+	//
+	//	XorNum[i] = Check;
+	//
+	//	Sum ^= XorNum[i];
+	//}
+	//
+	//cout << Sum << endl;
+
+	BitOperator();
+	
+	return 0;
+}
+
