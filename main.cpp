@@ -16,7 +16,6 @@ int main()
 	for (int i = 0; i < Input; i++)
 	{
 		int Num = 0;
-		cin >> Num;
 		if (!(cin >> Num))
 		{
 			return 1;
