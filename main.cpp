@@ -3,80 +3,119 @@
 
 using namespace std;
 
-
-
-int BitOperator()
+class Wall
 {
-	int N = 0;
-	unsigned long long X = 0;
-	unsigned long long Result = 0;
+public:
+	int WallSize = 10;
+	bool bCollision = true;
 
-	cin >> N;
-	for (int i = 0; i < N; ++i)
+};
+
+class Floor
+{
+public:
+	int FloorSize = 10;
+
+};
+
+class Player
+{
+public:
+	int X;
+	int Y;
+
+	void Move(int x, int y)
 	{
-		cin >> X;
-		unsigned long long NPOT = 2;
-		for (int j = 1; j < 64; ++j)
-		{
-			if (NPOT >= X)
-			{
-				if (i == 0)
-				{
-					Result = NPOT;
-				}
-				else
-				{
-					Result = Result ^ NPOT;
-				}
-				break;
-			}
 
-			NPOT = NPOT << 1;
+	}
+};
+
+class Monster
+{
+public:
+	int X;
+	int Y;
+
+	Wall Walls;
+
+	void Move(int x, int y)
+	{
+		if (Walls.bCollision == true)
+		{
+
+		}
+		else
+		{
+			
 		}
 	}
+};
 
-	cout << Result << endl;
+class Destination
+{
+public:
+	int X;
+	int Y;
+};
 
-	return 0;
-}
+class World
+{
+public:	
+	Wall Walls[100];
+	Floor Floors[100];
+	Destination Dest;
+	Player Players;
+	Monster Monsters;
+
+	void ArrivePlayer(Destination* InDest)
+	{
+		if ((Players.X == InDest->X) && (Players.Y == InDest->Y))
+		{
+			cout << "Game Clear";
+		}
+	}
+};
+
+class Engine
+{
+public:
+	World MyWorld;
+
+	void Run()
+	{
+		while (true)
+		{
+			Input();
+			Tick();
+			Render();
+		}
+	}
+	void Input()
+	{
+
+	}
+	void Tick()
+	{
+
+	}
+	void Render()
+	{
+
+	}
+};
 
 int main()
 {
-	//int Input = 0;
-	//int Sum = 0;
+	Engine* MyEngine = new Engine; 
+	MyEngine->Run();
+	delete MyEngine;
+	MyEngine = nullptr;
 
-	//cin >> Input;
-	//
-	//vector<int> XorNum(Input);
-	//
-	//for (int i = 0; i < Input; i++)
-	//{
-	//	int Num = 0;
-	//	if (!(cin >> Num))
-	//	{
-	//		return 1;
-	//	}			
-	//
-	//	int Check = 1;
-	//	while (Check <= Num)
-	//	{
-	//		if (Check > INT_MAX / 2) // ValueType Change
-	//		{
-	//			Check = Num + 1;
-	//			break;
-	//		}
-	//		Check = Check * 2; // Check << 1  faster than before
-	//	}
-	//
-	//	XorNum[i] = Check;
-	//
-	//	Sum ^= XorNum[i];
-	//}
-	//
-	//cout << Sum << endl;
 
-	BitOperator();
-	
 	return 0;
 }
+
+
+
+
 
